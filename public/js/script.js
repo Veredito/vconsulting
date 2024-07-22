@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (body.classList.contains('dark_mode')) {
         localStorage.setItem('theme', 'dark_mode');
       } else {
-        localStorage.removeItem('theme');
+        localStorage.setItem('theme', 'light_mode');
       }
     }
 
@@ -36,7 +36,10 @@ document.addEventListener('DOMContentLoaded', function() {
     toggleButton.addEventListener('click', toggleDarkMode);
 
     // Verificar a preferência do tema no localStorage
-    if (localStorage.getItem('theme') === 'dark_mode') {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light_mode') {
+      body.classList.remove('dark_mode');
+    } else {
       body.classList.add('dark_mode');
     }
   });
