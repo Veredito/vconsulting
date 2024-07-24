@@ -116,6 +116,7 @@ nav {
     font-size: 17px;
     font-weight: 300;
     align-items: center;
+    flex-wrap: wrap;
 }
 nav a {
     margin: 0 0 0 20px;
@@ -131,6 +132,9 @@ nav a {
 @media (max-width:768px) {
 header {
     padding: 40px 2rem 0;
+}
+nav a {
+    margin: 8px 0 0 20px;
 }
 }
 
