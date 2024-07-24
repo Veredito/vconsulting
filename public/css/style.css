@@ -128,7 +128,9 @@ header {
 }
 
 /* Main */
-
+main {
+    margin: 0 0 20rem;
+}
 #top {
     position: relative;
     display: flex;
@@ -195,8 +197,10 @@ header {
     position: absolute;
     top: 60%;
     right: 10rem;
-    text-transform: uppercase;
+}
+.toptitle {
     line-height: 123px;
+    text-transform: uppercase;
 }
 .t1 {
     font-size: 3rem;
@@ -212,6 +216,12 @@ header {
     animation: t2 2s linear 0.5s 1 normal forwards;
     animation-delay: 1s;
     opacity: 0;
+    transition: all 1s ease;
+
+    &:hover {
+        font-weight: 700;
+        transition: all 1s ease;
+    }
 }
 .t3 {
     font-size: 2rem;
@@ -219,6 +229,22 @@ header {
     animation: t3 2s linear 0.5s 1 normal forwards;
     animation-delay: 3s;
     opacity: 0;
+}
+.t4 {
+    position: relative;
+    right: 4rem;
+    animation: t4 2s linear 0.5s 1 normal forwards;
+    animation-delay: 3s;
+    opacity: 0;
+}
+.btn {
+    background: linear-gradient(45deg, #67635a, #8b8b86);
+    display: inline-flex;
+    padding: 10px 20px;
+    font-size: 2rem;
+    font-weight: 400;
+    border: 1px solid #ffffff29;
+    border-radius: var(--br_button);
 }
 @keyframes t1 {
     0% {transform: translateX(-100%);}
@@ -232,16 +258,20 @@ header {
     0% {transform: translateY(-100%);}
     100% {transform: translateY(0);opacity: 1;}
 }
+@keyframes t4 {
+    0% {transform: translateY(100%);}
+    100% {transform: translateY(0);opacity: 1;}
+}
 @media (max-width:768px) {
 #top {
     flex-wrap: nowrap;
     justify-content: flex-start;
 }
 .tag_box {
-    right: 12rem;
+    right: 1rem;
 }
 .tag {
-    width: 9rem;
+    width: 5rem;
     right: 13rem;
 }
 @keyframes tag {
@@ -285,6 +315,10 @@ header {
 .t2 {
     font-size: 13rem;
     font-style: normal;
+}
+.t4 {
+    margin: 0 auto;
+    right: 0;
 }
 }
 
