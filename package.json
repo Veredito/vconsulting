@@ -1,5 +1,5 @@
 {
-  "name": "gestgate",
+  "name": "tagchic",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -8,13 +8,13 @@
   },
   "author": "Walyson Patric",
   "license": "ISC",
-  "description": "GESTGATE",
+  "description": "TAGCHIC",
   "dependencies": {
     "ejs": "^3.1.10",
     "express": "^4.19.2",
     "html": "^1.0.0"
   },
   "bin": {
-    "gestgate": "index.js"
+    "tagchic": "index.js"
   }
 }
