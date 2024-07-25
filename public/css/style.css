@@ -95,6 +95,13 @@ h2 {
     }
 }
 
+@media (max-width:768px) {
+h1 {
+    font-size: 3rem;
+    line-height: 56px;
+}
+}
+
 /* Header */
 
 header {
@@ -460,7 +467,7 @@ nav a {
 
 @media (max-width:768px) {
 #headline {
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: 400;
     line-height: normal;
 }
@@ -518,7 +525,17 @@ nav a {
         justify-content: center;
     }
     #ft_box i {margin: 0}
-    .ft_info h2 {text-align: justify}    
+    .ft_info h1 {
+        margin: 2rem 0;
+        font-size: 3rem;
+        text-align: center;
+        line-height: 56px;
+    }
+    .ft_info h2 {text-align: justify}   
+    .btn_info {
+        display: flex;
+        justify-content: center;
+    } 
 }
 
 /* Footer */

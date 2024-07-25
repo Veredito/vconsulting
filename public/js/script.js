@@ -26,13 +26,16 @@ window.addEventListener('scroll', function() {
     var icon = document.querySelector('#ft_box i');
     var ftInfo = document.querySelector('.ft_info');
 
+    // Obtém a posição do elemento em relação ao topo da página
+    var ftBoxTop = document.getElementById('ft_box').getBoundingClientRect().top + window.scrollY;
+
     // Calcula o ponto em que o ícone e a div .ft_info devem começar a aparecer
-    var iconStart = windowHeight * 0.5; // Começa a aparecer quando 50% da tela for rolada
-    var infoStart = windowHeight * 0.6; // Começa a aparecer quando 60% da tela for rolada
+    var iconStart = ftBoxTop - windowHeight * 1.2; // Começa a aparecer quando metade do elemento entra na viewport
+    var infoStart = ftBoxTop - windowHeight * 1; // Começa a aparecer um pouco depois do ícone
 
     // Calcula o progresso da rolagem
-    var iconProgress = Math.min(1, Math.max(0, (scrollY - iconStart) / (windowHeight - iconStart)));
-    var infoProgress = Math.min(1, Math.max(0, (scrollY - infoStart) / (windowHeight - infoStart)));
+    var iconProgress = Math.min(1, Math.max(0, (scrollY - iconStart) / windowHeight));
+    var infoProgress = Math.min(1, Math.max(0, (scrollY - infoStart) / windowHeight));
 
     // Atualiza as propriedades de transformação e opacidade
     icon.style.transform = 'translateX(' + (50 - iconProgress * 50) + 'px)';
