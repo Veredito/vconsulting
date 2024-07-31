@@ -1,5 +1,5 @@
 {
-  "name": "tagchic",
+  "name": "vconsulting",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -8,13 +8,14 @@
   },
   "author": "Walyson Patric",
   "license": "ISC",
-  "description": "TAGCHIC",
+  "description": "vconsulting",
   "dependencies": {
+    "bootstrap": "^5.3.3",
     "ejs": "^3.1.10",
     "express": "^4.19.2",
     "html": "^1.0.0"
   },
   "bin": {
-    "tagchic": "index.js"
+    "vconsulting": "index.js"
   }
 }

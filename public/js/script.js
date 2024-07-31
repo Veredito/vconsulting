@@ -1,48 +1,47 @@
-/* Efeito no background na seção 2 */
+
+/* Fixar header na rolagem */
 
 window.addEventListener('scroll', function() {
-    var scrollY = window.scrollY;
-    var scale = Math.max(1, 1.5 - scrollY / window.innerHeight);
-    var opacity = Math.min(1, scrollY / window.innerHeight);
-    var headline = document.getElementById('headline');
-    headline.style.transform = 'scale(' + scale + ')';
-    headline.style.opacity = opacity;
-
-    // Parallax effect for background images
-    var parallaxElements = document.querySelectorAll('.img');
-    parallaxElements.forEach(function(element) {
-        var size = 300 + scrollY * 0.1; // Adjust the multiplier for a more or less pronounced effect
-        element.style.backgroundSize = size + 'px';
-    });
+  var header = document.querySelector('header');
+  header.classList.toggle('sticky', window.scrollY > 0);
 });
 
-/* Efeito de transição na seção 3 */
+/* Menu mobile */
 
-window.addEventListener('scroll', function() {
-    var scrollY = window.scrollY;
-    var windowHeight = window.innerHeight;
+const menuMobile = document.querySelector('.menu-mobile');
+const menuMobileContent = document.querySelector('.menu-mobile-content');
 
-    // Seleciona o ícone e a div .ft_info
-    var icon = document.querySelector('#ft_box i');
-    var ftInfo = document.querySelector('.ft_info');
+const closeMenu = document.querySelector('.close-menu');
 
-    // Obtém a posição do elemento em relação ao topo da página
-    var ftBoxTop = document.getElementById('ft_box').getBoundingClientRect().top + window.scrollY;
+closeMenu.addEventListener('click', () => {
+  menuMobileContent.classList.remove('active');
+});
 
-    // Calcula o ponto em que o ícone e a div .ft_info devem começar a aparecer
-    var iconStart = ftBoxTop - windowHeight * 1.2; // Começa a aparecer quando metade do elemento entra na viewport
-    var infoStart = ftBoxTop - windowHeight * 1; // Começa a aparecer um pouco depois do ícone
+menuMobile.addEventListener('click', () => {
+  menuMobile.classList.toggle('active');
+  menuMobileContent.classList.toggle('active');
+});
 
-    // Calcula o progresso da rolagem
-    var iconProgress = Math.min(1, Math.max(0, (scrollY - iconStart) / windowHeight));
-    var infoProgress = Math.min(1, Math.max(0, (scrollY - infoStart) / windowHeight));
+/* Efeito na seção service */
 
-    // Atualiza as propriedades de transformação e opacidade
-    icon.style.transform = 'translateX(' + (50 - iconProgress * 50) + 'px)';
-    icon.style.opacity = iconProgress;
+document.querySelectorAll('.toggleBtn').forEach(button => {
+    button.addEventListener('click', function() {
+        const parentDiv = this.parentElement;
+        const hiddenItems = parentDiv.querySelectorAll('ul li.hidden');
+        const isVisible = hiddenItems.length === 0;
 
-    ftInfo.style.transform = 'translateX(' + (-50 + infoProgress * 50) + 'px)';
-    ftInfo.style.opacity = infoProgress;
+        if (isVisible) {
+            parentDiv.querySelectorAll('ul li').forEach((item, index) => {
+                if (index > 1) {
+                    item.classList.add('hidden');
+                }
+            });
+            this.textContent = 'Mostrar Mais';
+        } else {
+            hiddenItems.forEach(item => item.classList.remove('hidden'));
+            this.textContent = 'Mostrar Menos';
+        }
+    });
 });
  
  // Seta de volta ao topo do site | Back to Top
