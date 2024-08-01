@@ -109,7 +109,7 @@ button, .btn {
 }
 @media (max-width:768px) {
 h1 {
-    font-size: 3rem;
+    font-size: 40px;
     line-height: 56px;
 }
 }
@@ -393,6 +393,9 @@ main {
         justify-content: flex-start;
         overflow: auto;
     }
+    #service::after {
+      background-size: 100% 60%;
+  }    
 }
 
 /* Footer */
