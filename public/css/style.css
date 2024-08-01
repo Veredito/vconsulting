@@ -174,7 +174,7 @@ header.sticky .hbox {
     flex-wrap: wrap;
 }
 #navDesk a {
-    margin: 10px;
+    margin: 0 0 0 20px;
     transition: all .2s ease-out;
 
     &:hover {
@@ -208,34 +208,55 @@ header.sticky + #topfixed {
         display: block;
         position: relative;
         top: 0;
-        right: 0;
-        background: linear-gradient(214deg, var(--primary), #9f6c38);
-        padding: 10px;
-        border-radius: 6px;
+        right: 8px;
         cursor: pointer;
       }
       .menu-mobile i {
-        font-weight: 600;
-        color: var(--dark);
+        font-size: 30px;
+        color: white;
     } 
       .menu-mobile:focus {
         outline: none;
       }
       .menu-mobile-content.active {
-        background: #161616e0;
-        left: 0;
-        border-right: 1px solid #ffffff14;
+        background: #3f3f3f87;
+        width: 50%;
+        right: 0;
+        border-left: 1px solid #ffffff14;
         backdrop-filter: blur(7px);
         box-shadow: 0 0 10px -3px black;
+        z-index: 20000;
+        overflow: auto;
     }
+    .menu-mobile-content.active:after {
+      content: '';
+      background: var(--primary);
+      position: absolute;
+      width: 5rem;
+      height: 10rem;
+      top: -5rem;
+      left: -3rem;
+      transform: rotate(45deg);
+  }
+    .menu-mobile-content.active + .active_bg {
+      background: #161616e6;
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+  }
       .menu-mobile-content {
-        position: absolute;
+        position: fixed;
         display: flex;
         height: 100%;
         top: 0;
-        left: -100%;
+        right: -100%;
         background: var(--dark);
-        padding: 3rem;
+        padding: 3rem 25px;
         font-size: 22px;
         font-weight: 200;
         z-index: 1;
@@ -243,17 +264,46 @@ header.sticky + #topfixed {
         flex-direction: column;
       }
       .menu-mobile-content a {
-        margin: 0 0 23px;
+        display: flex;
+        width: 100%;
+        margin: 0;
+        padding: 20px 0;
+        font-size: 17px;
+        border-bottom: 1px solid #ffffff1f;
+        align-items: center;
     }
+    .menu-mobile-content a i {
+      margin-right: 20px;
+  }
       .menu-mobile:checked ~ .menu-mobile-content {
         display: block;
       }   
+      .menu_mb {
+        display: flex;
+        align-items: center;
+    }
+    .menu_mb h2 {
+      font-weight: 500;
+      color: var(--primary);
+  }
       .close-menu {
+        background: linear-gradient(0deg, #434343, #5b5b5b);
         position: absolute;
-        top: 10px;
-        right: 14px;
+        display: flex;
+        width: 20px;
+        height: 55px;
+        top: -2%;
+        right: 20px;
+        margin: 0 0 0 16px;
+        padding: 10px;
+        border-bottom: 1px solid #6d6d6d;
         font-size: 22px;
-        color: white;
+        font-weight: 700;
+        border-radius: 7px;
+        color: #b3b3b3;
+        cursor: pointer;
+        justify-content: center;
+        align-items: flex-end;
     }      
 }
 
@@ -401,6 +451,10 @@ main {
     #service::after {
       background-size: 100% 60%;
   }    
+  .serv_title {
+    margin: 0 0 2rem;
+    text-align: left;
+} 
 }
 
 /* Footer */
@@ -494,3 +548,121 @@ footer {
     -webkit-transition: all 200ms linear;
     transition: all 200ms linear;
 }  
+
+@media (min-width:769px) {
+  #installBtnPWA_buttons {
+   display: none !important
+  }
+ }
+
+ @media (max-width:768px) {
+  #installBtnPWA_buttons {
+   background: var(--w);
+   display: none;
+   position: fixed;
+   width: 100%;
+   padding: 10px;
+   bottom: 0;
+   z-index: 10000;
+   box-shadow: 0 0 18px -8px black;
+   justify-content: space-between;
+   align-items: center
+  }
+
+  #installBtnPWA,
+  #fecharBtnPWA {
+   background: none;
+   padding: 0;
+   font-size: 19px;
+   font-weight: 600;
+   border: 0;
+   color: black
+  }
+
+  #installBtnPWA {
+   display: flex;
+   color: var(--dark);
+   text-align: left;
+   align-items: center
+  }
+
+  #installBtnPWA .sub_pwa {
+   display: block;
+   font-size: 12px;
+   font-weight: 500;
+   color: var(--dark)
+  }
+
+  #installBtnPWA img {
+   margin: 0 10px 0 0
+  }
+
+  #fecharBtnPWA svg {
+   display: block;
+   width: 50px;
+   height: 35px
+  }
+
+  #fecharBtnPWA path {
+   color: var(--dark)
+  }
+ }
+
+ /* Estilo no iOS */
+ .msgios {
+  display: flex;
+  text-align: left;
+  align-items: center
+ }
+
+ .msgios span {
+  font-size: 13px;
+  color: var(--dark)
+ }
+
+ .msgios img {
+  margin: 0 15px 0 0
+ }
+
+ .msgios_close {
+  background: linear-gradient(45deg, #e1e1e1, white);
+  display: flex;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #ffffff;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 0 6px -4px black
+ }
+
+ .msgios_close svg {
+  display: block;
+  width: 40px;
+  height: 20px;
+ }
+
+ .msgios_close path {
+  color: var(--dark)
+ }
+
+ .ios-install-message {
+  position: fixed;
+  display: none;
+  width: 100%;
+  text-align: center;
+  padding: 10px 10px;
+  background: var(--w);
+  bottom: 0;
+  z-index: 20000;
+  align-items: center;
+  box-shadow: 0 0 9px -5px black;
+  justify-content: space-between
+ }
+
+ .ios-install-message button {
+  border: none;
+  padding: 0 10px;
+  background-color: transparent;
+  cursor: pointer
+ }

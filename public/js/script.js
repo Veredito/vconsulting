@@ -10,6 +10,7 @@ window.addEventListener('scroll', function() {
 
 const menuMobile = document.querySelector('.menu-mobile');
 const menuMobileContent = document.querySelector('.menu-mobile-content');
+const links = menuMobileContent.querySelectorAll('a');
 
 const closeMenu = document.querySelector('.close-menu');
 
@@ -20,6 +21,13 @@ closeMenu.addEventListener('click', () => {
 menuMobile.addEventListener('click', () => {
   menuMobile.classList.toggle('active');
   menuMobileContent.classList.toggle('active');
+});
+
+links.forEach(link => {
+  link.addEventListener('click', () => {
+    menuMobileContent.classList.remove('active');
+    menuMobile.classList.remove('active');
+  });
 });
 
 /* Efeito na seção service */
