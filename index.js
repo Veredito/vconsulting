@@ -10,6 +10,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', (req, res) => {
     res.render('index');
   });
+
+  app.get('/sobre', (req, res) => {
+    res.render('sobre', { title: 'Empresa' });
+  }); 
   
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);

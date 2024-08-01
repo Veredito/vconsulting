@@ -29,72 +29,20 @@
   </head>
   <body>
 
-<header>
-  <div class="hbox">
-    <div id="logo">
-  <a href="/">
-    <img src="/img/logo.svg" title="logo">
-  </a>
-</div>
-    <nav id="navDesk">
-    <a href="#product">Produtos</a>
-    <a href="#">Empresa</a>
-    <a class="destaque" href="#">WhatsApp</a>
-    </nav>
-
-<div class="menu-mobile">
-  <i class="fa-regular fa-bars"></i>
-</div>
-
-  </div>
-
-  <nav class="menu-mobile-content">
-
-  <div class="close-menu">
-    <i class="fa-solid fa-xmark"></i>
-  </div>
-
-    <a href="#product">Produtos</a>
-    <a href="#business">Empresa</a>
-    <a class="destaque" href="#contact">Contato</a>
-  </nav>
-
-</header>
+<%- include('partials/header') %>  
 
 <main>
 
-  <div class="background">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 800" width="100%" height="100%" preserveAspectRatio="none">
-      <!-- Define o padrão com a imagem -->
-      <defs>
-        <pattern id="imagePattern" patternUnits="userSpaceOnUse" width="1440" height="800">
-          <image href="/img/bg.webp" x="0" y="0" width="1440" height="800" preserveAspectRatio="none"></image>
-        </pattern>
-      </defs>
-    
-      <!-- Aplicar o padrão à forma ondulada -->
-      <path fill="url(#imagePattern)" d="M 0 192 C 236 201 429 256 690 450 s 512 252 753 24 L 1440 0 L 1392 0 C 1344 0 1248 0 1152 0 C 1056 0 960 0 864 0 C 768 0 672 0 576 0 C 480 0 384 0 288 0 C 192 0 96 0 48 0 L 0 0 Z"></path>
-    </svg>
-
-  </div>
-
 <div class="container">
 
-<section class="autor">
-<div class="aut_title">
-<div class="aut_text">
-<h1>Minha história</h1>
+<section class="presentation">
+<div class="pr_title">
+<div class="pr_text">
+<h1>Transforme Seu Negócio</h1>
 <h2>
-  Olá, eu sou a Vanessa, formada em Administração pela FGV, 
-  com uma trajetória de 20 anos em grandes corporações multinacionais 
-  e os últimos 8 anos dedicados exclusivamente à consultoria para pequenas empresas. Minha verdadeira paixão é pegar desafios e transformá-los em oportunidades vibrantes, levando seu negócio a novos horizontes! 
-  <span id="verMais" style="display: none;">
-    <br><br>
-    Com uma abordagem totalmente personalizada e envolvente, trabalho lado a lado com você, proprietário, mergulhando fundo no contexto atual da sua empresa e nas suas metas pessoais. Meu compromisso é garantir que cada transformação e adaptação seja realizada de forma fluida e eficaz, proporcionando a confiança e o suporte que você merece. 
-    <br><br>
-    Com meu apoio constante e próximo, você vai sentir a diferença em cada passo dessa jornada. Juntos, vamos não só ajustar estratégias, mas criar um futuro brilhante e promissor para sua empresa. Vamos fazer essa transição com entusiasmo e alcançar novos patamares de sucesso! 
-  </span>
-  <a href="#" onclick="document.getElementById('verMais').style.display='inline'; this.style.display='none';">Ver mais...</a>
+  Aqui, entendemos que cada negócio tem sua própria jornada, cheia de desafios e oportunidades únicas. 
+  Nosso objetivo é ser o parceiro que você precisa para navegar por essa trajetória com segurança e eficácia. 
+  <br><br>Com uma abordagem personalizada, oferecemos consultoria dedicada e estratégica, focada em impulsionar seu empreendimento para novos patamares de sucesso.
 </h2>
 
 </div>
@@ -103,10 +51,20 @@
 <img src="\img\woman.webp">
 </section>
 
+</div>
+
 <section id="service">
+  <div class="container">
+  <div class="serv_title">
+  <h1>Tudo que precisa em um só lugar</h1>
+  <h2>Confira o que preparamos para sua empresa</h2>
+  </div>
+
+  <div class="servBox">
+
   <div class="sbox s1">
   
-  <ul><span class="stitle">Assessoria Personalizada e Ativa </span>
+  <ul><span class="stitle"><i class="fa-thin fa-user-tie"></i> Assessoria Personalizada e Ativa </span>
     <li>Aqui, você nunca estará sozinho!  Enquanto você e sua equipe assimilam o novo sistema, 
       estarei ao seu lado em cada passo do caminho. </li>
       <li>Minha missão é estar presente, ajudando e guiando diretamente, 
@@ -119,7 +77,7 @@
 
 <div class="sbox s2">
   
-  <ul><span class="stitle">Consultoria Administrativa e Financeira </span>
+  <ul><span class="stitle"><i class="fa-thin fa-users-rays"></i> Consultoria Administrativa e Financeira </span>
     <li><span>Análise Completa:</span> Vamos dar uma olhada em como você está tocando os procedimentos administrativos e financeiros para encontrar formas de deixar tudo mais eficiente.</li>
     <li><span>Fluxo de Caixa:</span> Criamos um fluxo de caixa operacional para você ter o controle total das suas finanças.</li>
     <li class="hidden"><span>Planejamento Financeiro:</span> Fazemos cálculos estimativos de receitas, despesas, custos e salários para garantir que tudo esteja no caminho certo.</li>
@@ -136,7 +94,7 @@
 
 <div class="sbox s3">
 
-  <ul>  <span class="stitle">Contabilidade</span>
+  <ul>  <span class="stitle"><i class="fa-thin fa-building-columns"></i> Contabilidade</span>
     <li><span>Abertura e Encerramento de empresas  </span>
 
     Apoio completo para iniciar ou fechar empresas, garantindo processos ágeis e legais.  
@@ -165,49 +123,176 @@
 
 </div>
 
-</section>
+<div class="sbox s4">
+
+  <ul>  <span class="stitle"><i class="fa-thin fa-browser"></i> Marketing e Web Designer</span>
+    <li>Transforme a presença online da sua empresa com nossas soluções de criação de landing pages e sites institucionais otimizados em SEO. 
+   </li>
+    <li>
+      Nós entendemos que um site bem estruturado e uma landing page eficaz são fundamentais para atrair e converter clientes. 
+    </li>   
+    <li class="hidden"><span>Nossos Serviços Incluem:</span></li>
+    <li class="hidden">
+      <span>Design Responsivo e Moderno: </span>
+      Desenvolvemos layouts atraentes e funcionais, que se adaptam a qualquer dispositivo, proporcionando uma experiência de usuário excepcional.
+    </li>
+    <li class="hidden">
+      <span>Otimização em SEO: </span>
+      Implementamos as melhores práticas de SEO, incluindo palavras-chave relevantes, meta descrições, títulos otimizados e conteúdo de qualidade, para melhorar o ranking do seu site nos motores de busca.
+    </li>
+    <li class="hidden">
+      <span>Velocidade e Desempenho: </span>
+      Garantimos que seu site seja rápido e eficiente, oferecendo uma navegação fluida e sem interrupções.
+     </li>
+    <li class="hidden">
+      <span>Análise e Monitoramento: </span>
+      Fornecemos ferramentas e relatórios para monitorar o desempenho do seu site e ajustar estratégias conforme necessário para maximizar resultados.
+    </li>
+    
+  </ul><button id="showMoreBtn4" class="toggleBtn">Mostrar Mais</button>
+
 
 </div>
+
+<div class="sbox s5">
+
+  <ul>  <span class="stitle"><i class="fa-thin fa-registered"></i> Registro de Marcas</span>
+    <li>Proteja sua Inovação com o Registro de Marcas e Patentes 
+      Garanta a segurança da sua propriedade intelectual e conquiste uma vantagem competitiva no mercado com o registro de marcas e patentes!  
+    </li>
+    <li>
+      <span>Marcas:</span> Proteja os símbolos, nomes e logotipos que definem a identidade do seu negócio. 
+    </li> 
+    <li class="hidden">
+      Ao registrar sua marca, você assegura que somente sua empresa possa usá-la, evitando a imitação por concorrentes e fortalecendo a confiança dos seus clientes. 
+    </li> 
+    <li class="hidden">
+      <span>Patentes: </span>
+      Salvaguarde suas invenções e inovações com exclusividade no mercado. <br><br>O registro de patentes garante que apenas você possa fabricar, usar e comercializar sua criação, colhendo os benefícios financeiros e impedindo o uso não autorizado por terceiros.  </li>
+    <li class="hidden">
+      Invista no registro de marcas e patentes e construa uma base sólida para o sucesso e a longevidade da sua empresa! 
+    </li>
+    
+  </ul><button id="showMoreBtn5" class="toggleBtn">Mostrar Mais</button>
+
+</div>
+
+<div class="sbox s6">
+
+  <ul>  <span class="stitle"><i class="fa-thin fa-hands-holding-dollar"></i> BPO Financeiro</span>
+    <li>Descubra o Poder do BPO (Business Process Outsourcing) <br><br>
+      Transforme sua empresa com a terceirização estratégica de processos de negócios! 
+    </li>
+    <li>
+      Ao optar pelo BPO, você pode reduzir custos, aumentar a eficiência e acessar tecnologias e especializações avançadas sem sobrecarregar sua equipe interna. 
+    </li>
+      <li class="hidden">
+Tenha uma ferramenta de controle financeiro integrada à sua contabilidade e obtenha toda informação financeira essencial da sua empresa. Com essa integração, você terá acesso a relatórios detalhados, análises financeiras e previsões precisas, permitindo uma gestão financeira mais eficaz e estratégica. 
+<br><br>
+Invista em BPO e veja sua empresa alcançar novos patamares de sucesso! 
+    </li>
+
+  </ul><button id="showMoreBtn6" class="toggleBtn">Mostrar Mais</button>
+
+</div>
+
+<div class="sbox s7">
+
+  <ul>  <span class="stitle"><i class="fa-thin fa-notes-medical"></i> Seguro Saúde Corporativo </span>
+    <li>Transforme sua empresa em um lugar mais saudável e atraente para se trabalhar com o seguro saúde corporativo!  <br>
+  </li>
+    <li>
+      <span>Para seus Funcionários:</span> Proporcione acesso a uma ampla rede de serviços médicos de qualidade, reduzindo custos com cuidados de saúde e oferecendo a tranquilidade de saber que suas necessidades médicas estão cobertas. 
+    </li>
+    <li class="hidden">
+      <span>Para sua Empresa:</span> Aumente a satisfação e a fidelização dos colaboradores, garantindo que sua equipe tenha acesso rápido a cuidados médicos, o que se traduz em maior produtividade e menos absenteísmo por doenças. 
+    </li>
+      <li class="hidden">
+        Ao investir no seguro saúde corporativo, você demonstra que se importa com o bem-estar de seus funcionários, criando um ambiente de trabalho saudável e produtivo. Atraia e retenha os melhores talentos com esse benefício essencial e veja sua empresa prosperar! <br><br>
+Invista em BPO e veja sua empresa alcançar novos patamares de sucesso! 
+    </li>
+    <li class="hidden">
+      Faça uma cotação de seguro saúde para sua empresa. Temos parceria com as maiores e melhores corretoras do mercado.  </li>
+
+  </ul><button id="showMoreBtn7" class="toggleBtn">Mostrar Mais</button>
+
+</div>
+
+<div class="sbox s8">
+
+  <ul>  <span class="stitle"><i class="fa-thin fa-monitor-waveform"></i> Seguro de Vida Corporativo</span>
+    <li>Por que investir em seguro de vida para sua empresa? <br>
+  </li>
+    <li>
+      <span>Proteção Essencial:</span> O seguro de vida oferece uma rede de segurança financeira crucial para seus colaboradores e suas famílias em casos de imprevistos como morte, invalidez ou doenças graves. Ele garante que, em momentos difíceis, seus funcionários não enfrentarão dificuldades financeiras adicionais. 
+    </li>
+    <li class="hidden">
+      <span>Tranquilidade e Confiança:</span> Proporciona paz de espírito tanto para seus colaboradores quanto para a empresa. Saber que têm um suporte sólido em situações inesperadas fortalece a confiança e a lealdade à empresa. 
+    </li>
+      <li class="hidden">
+      <span>Custo-Benefício Imbatível:</span> Com um investimento acessível, o seguro de vida corporativo proporciona um retorno significativo em segurança e bem-estar. É uma forma eficaz de demonstrar cuidado e responsabilidade, atraindo e retendo talentos com um benefício valioso e econômico. 
+      </li>
+    <li class="hidden">
+      Invista em seguro de vida corporativo e transforme a proteção em um diferencial estratégico para sua empresa! 
+    </li>
+
+  </ul><button id="showMoreBtn8" class="toggleBtn">Mostrar Mais</button>
+
+</div>
+
+<div class="sbox s9">
+
+  <ul>  <span class="stitle"><i class="fa-thin fa-messages-dollar"></i> Vendas </span>
+    <li>Transforme suas Vendas com Nossa Estruturação de Equipes! <br>
+      Dê um salto nas suas vendas com nosso serviço especializado em estruturação de equipes de vendas, perfeito para pequenas empresas e sócios proprietários. Nós cuidamos de tudo para que você veja resultados incríveis! 
+     </li>
+    <li>
+      <span></span>Ferramentas de Vendas de Ponta:</span> Implementamos as mais modernas ferramentas para maximizar a eficiência e a produtividade da sua equipe. 
+    </li>
+      <li class="hidden">
+        <span>Potencialize com Redes Sociais:</span> Use o poder das redes sociais para ampliar seu alcance e conquistar novos clientes com estratégias eficazes. 
+       </li>
+    <li class="hidden">
+      <span>Prospecção Eficiente com SDR:</span> Desenvolva uma abordagem de prospecção afinada para qualificar leads e converter oportunidades em vendas reais. 
+    </li>
+    <li class="hidden">
+      <span>Treinamento Sob Medida:</span> Oferecemos treinamentos personalizados para que sua equipe de vendas domine as técnicas mais eficazes e atinja suas metas com confiança. 
+    </li>
+    <li class="hidden">
+      <span>Suporte e Direcionamento Constante:</span> Contará com nossa orientação direta e suporte contínuo para garantir que sua equipe esteja sempre no caminho certo para o sucesso. 
+    </li>
+    <li class="hidden">
+      Vamos juntos transformar suas vendas e fazer sua empresa brilhar! Com nossa abordagem prática e personalizada, você terá uma equipe de vendas pronta para alcançar novos patamares! 
+    </li>
+
+  </ul><button id="showMoreBtn9" class="toggleBtn">Mostrar Mais</button>
+
+</div>
+
+<div class="sbox s10">
+
+  <ul>  <span class="stitle"><i class="fa-thin fa-credit-card-front"></i> Recuperação de Crédito PF e PJ  </span>
+    <li>As pequenas empresas enfrentam muitos desafios na obtenção de crédito. 
+      <br><br>
+      Desde a limitação de alavancagem de capital, que chega a apenas 30% do faturamento anual, até as rígidas garantias exigidas pelo BACEN, como imóveis rurais ou operacionais, que muitas vezes são rejeitadas. 
+      <br><br>
+      Além disso, o volume de crédito disponível raramente é suficiente para resolver os problemas financeiros de forma definitiva. 
+      <br><br>
+      Isso sem contar as empresas que possuem restrições cadastrais ou estão em processos como a Recuperação Judicial, que acabam sendo excluídas do acesso a essas linhas de crédito. 
+    </li>
+
+  </ul>
+
+</div>
+
+</div>
+</div>
+</section>
+
+
 </main>
 
-
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4">
-        <h2>Contato</h2>
-        <p>Endereço: Rua das Flores Nº 123</p>
-        <p>Telefone: (11) 99999-9999</p>
-        <p>Email: contato@vconsulting.com.br</p>
-      </div>
-      <div class="col-md-4">
-        <h2>Links úteis</h2>
-        <ul>
-          <li><a href="#">Política de Privacidade</a></li>
-          <li><a href="#">Termos e Condições</a></li>
-          <li><a href="#">Dúvidas Frequentes</a></li>
-        </ul>
-      </div>
-      <div class="col-md-4">
-        <h2>Redes Sociais</h2>
-        <ul>
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">WhatsApp</a></li>
-          <li><a href="#">LinkTree</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<div class="progress-wrap active-progress">
-  <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-   <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 114.346;"></path>
-  </svg>
-  <i class="fa-solid fa-arrow-up"></i>
- </div>
-
-<script src="js/script.js" type="text/javascript" defer></script>
+<%- include('partials/footer') %>
 
 </body>
 </html>

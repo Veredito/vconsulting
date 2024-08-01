@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="pt-BR">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, shrink-to-fit=no">
+  <meta name="theme-color" content="#352755">
+  <title>VCONSULTING - Sobre</title>
+  <link rel="shortcut icon" type="image/png" href="/img/favicon.webp">
+  <meta name="description" content="Com uma abordagem totalmente personalizada e envolvente, trabalho lado a lado com você, proprietário, mergulhando fundo no contexto atual da sua empresa e nas suas metas pessoais. ">
+
+  <link href="/css/fonts.css" rel="stylesheet" as="font">
+  <link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');" href="/css/fontawesome.min.css?v=2024">
+  <link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');" href="/css/light.css?v=2024">
+  <link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');" href="/css/brands.min.css?v=2024">  
+  <link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');" href="/css/thin.min.css?v=2024">  
+
+  <noscript>
+  <link rel="stylesheet" href="/css/fontawesome.min.css?v=2024">
+  <link rel="stylesheet" href="/css/light.css?v=2024">
+  <link rel="stylesheet" href="/css/brands.min.css?v=2024">
+  <link rel="stylesheet" href="/css/thin.min.css?v=2024">
+  </noscript>
+
+  <link rel="preload" href="/css/style.css" as="style">
+  <link href="/css/style.css" type="text/css" rel="stylesheet">
+
+  <link href="/js/script.js" rel="preload" as="script">
+
+<style>
+.autor {
+    display: flex;
+    max-width: 100%;
+    margin: 3rem auto 2rem;
+    padding: 0;
+    justify-content: center;
+    align-items: flex-start;
+}
+.aut_text {
+    background: linear-gradient(45deg, #ff8f001a, #7e94ff26);
+    display: flex;
+    padding: 1rem;
+    border: 1px solid #ffffff0d;
+    border-radius: var(--br);
+    align-items: flex-start;
+    flex-direction: column;
+    backdrop-filter: blur(8px);
+}
+.autor img {
+    position: relative;
+    width: 100%;
+    max-width: 30%;
+    margin: 0 2rem 0 0;
+    float: left;
+}
+.autor h2 a {
+  color: var(--primary);
+}
+.values  {
+  padding: 0;
+}
+.values span {
+  color: var(--primary)
+}
+.backpage {
+    margin: 6rem auto 0;
+}
+.linkService {
+    display: none;
+}
+@media (max-width:768px) {
+.autor {
+    padding: 0;
+    flex-wrap: wrap;
+}
+.aut_text {
+    background: none;
+    padding: 0;
+    border: 0;
+}   
+.aut_text h1 {
+    width: 100%;
+    text-align: center;
+}
+.autor img {
+    max-width: 95%;
+    margin: 0 auto 2rem;
+    order: -1;
+}    
+}
+</style>
+
+  </head>
+  <body>
+
+<%- include('partials/header') %>  
+
+<main>
+  
+<div class="container" style="display: flex;flex-direction: column;">
+  <section class="autor">
+    <div class="aut_title">
+    <div class="aut_text">
+    <h1>Minha história</h1>
+
+    <div>
+    <img src="\img\woman.webp">  
+    <h2>
+      Olá, eu sou a Vanessa, formada em Administração pela FGV, 
+      com uma trajetória de 20 anos em grandes corporações multinacionais 
+      e os últimos 8 anos dedicados exclusivamente à consultoria para pequenas empresas. Minha verdadeira paixão é pegar desafios e transformá-los em oportunidades vibrantes, levando seu negócio a novos horizontes! 
+
+        <br><br>
+        Com uma abordagem totalmente personalizada e envolvente, trabalho lado a lado com você, proprietário, mergulhando fundo no contexto atual da sua empresa e nas suas metas pessoais. Meu compromisso é garantir que cada transformação e adaptação seja realizada de forma fluida e eficaz, proporcionando a confiança e o suporte que você merece. 
+        <br><br>
+        Com meu apoio constante e próximo, você vai sentir a diferença em cada passo dessa jornada. Juntos, vamos não só ajustar estratégias, mas criar um futuro brilhante e promissor para sua empresa. Vamos fazer essa transição com entusiasmo e alcançar novos patamares de sucesso! 
+  
+  </h2>
+</div>
+    
+    </div>
+    
+    </div>
+    </section>
+
+<section class="values">
+  <h1>Valores</h1>
+  <h2>
+<span>Confiança e Transparência:</span> <br>Construo uma relação de total confiança e transparência, garantindo que você se sinta seguro e bem informado a cada passo. Entendendo profundamente o momento atual do seu negócio eu estou aqui para esclarecer cada aspecto do processo. 
+<br><br>
+<span>Compromisso com o Sucesso:</span> <br>Meu foco é no sucesso da sua empresa, oferecendo soluções personalizadas e práticas que atendem tanto às necessidades específicas do seu negócio quanto ao seu momento pessoal como sócio proprietário. 
+<br><br>
+<span>Excelência e Inovação:</span> <br>Busco constantemente a excelência, utilizando as melhores práticas e tecnologias para entregar resultados excepcionais. Compreendo o contexto do seu negócio e do seu papel como proprietário para garantir que as soluções sejam eficazes e alinhadas com suas metas. 
+  </h2>
+</section>
+
+<a class="btn backpage" href="/" title="home">Voltar para home</a>
+
+  </div>
+</main>
+
+<%- include('partials/footer') %>
+
+</body>
+</html>

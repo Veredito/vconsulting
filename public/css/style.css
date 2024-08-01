@@ -35,14 +35,17 @@
     overflow: overlay;
   }
 body {
-    background: var(--dark);
-    min-height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: 'Montserrat', sans-serif;
-    color: var(--w);
-    box-sizing: border-box;
-    overflow-x: hidden;
+  background: var(--dark);
+  display: flex;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--w);
+  box-sizing: border-box;
+  overflow-x: hidden;
+  flex-direction: column;
+  justify-content: space-between;
 }
 * {transition: all .2s ease-out;}
 ul {padding: 0}
@@ -59,9 +62,10 @@ a {
 }
 b {font-weight: bold;}
 h1 {
+    margin: 0 0 20px;
     font-size: 3rem;
     font-weight: 400;
-    line-height: 86px;
+    line-height: 60px;
 }
 h2 {
     font-size: 1.1rem;
@@ -79,15 +83,16 @@ p {
     margin: 0 auto;
     padding: 0 15px;
 }
-button {
-    background: var(--primary);
-    position: relative;
-    padding: 5px 20px;
-    color: var(--dark);
-    border: 1px solid var(--primary);
-    border-radius: var(--br_btn);
-    transition: all .2s ease-out;
-    cursor: pointer;
+button, .btn {
+  background: var(--primary);
+  position: relative;
+  padding: 5px 20px;
+  font-weight: 600;
+  color: var(--dark);
+  border: 1px solid var(--primary);
+  border-radius: var(--br_btn);
+  transition: all .2s ease-out;
+  cursor: pointer;
 
     &:hover {
         background: none;
@@ -192,6 +197,9 @@ header.sticky .hbox {
   .menu-mobile-content {
     display: none;
 }
+header.sticky + #topfixed {
+  height: 81px;
+}
 @media (max-width:768px) {
     #navDesk {
         display: none;
@@ -261,7 +269,7 @@ main {
     position: absolute;
     display: flex;
     width: 100%;
-    top: 0;
+    top: -12vw;
     left: 0;
     z-index: -1;
   }
@@ -270,74 +278,104 @@ main {
     height: 100%;
 }
 
-/* Autor */
+/* Apresentação */
 
-.autor {
+.presentation {
     display: flex;
     width: 100%;
     padding: 0 0 4rem;
     justify-content: space-between;
     align-items: center;
 }
-.aut_title {
+.pr_title {
     max-width: 45%;
 }
-.aut_text h2 {
-    max-height: 320px;
-    overflow: auto;
-}
-.aut_text h2 a {
-    color: var(--primary);
-}
-.autor img {
+.presentation img {
     position: relative;
     width: 100%;
     max-width: 45%;
     margin: 0 0 0 6rem;
 }  
 @media (max-width:768px) {
-    .autor {
+    .presentation {
         flex-wrap: wrap;
     }
-    .aut_title {
+    .pr_title {
         max-width: 100%;
     }
-    .autor img {
+    .presentation img {
         max-width: 95%;
         margin: 0 auto 2rem;
         order: -1;
     }   
-    .aut_text h2 {
+    .pr_text h2 {
         margin: 1rem 0 0;
     }   
 }
 
+
+
 /* Service */
 
 #service {
-    display: flex;
-    flex-wrap: wrap;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+#service::after {
+  content: '';
+  background: radial-gradient(#353331, transparent 65%);
+  background-repeat: no-repeat;
+  background-size: 1200px 30%;
+  background-position: top;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -2;
+}
+.servBox {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;  
+}
+.serv_title {
+  display: flex;
+  width: 100%;
+  margin: 0 0 4rem;
+  text-align: center;
+  flex-direction: column;
 }
 .sbox {
-    background: #1e1e1e;
-    display: flex;
-    max-width: 25%;
-    min-width: 250px;
-    max-height: 400px;
-    margin: 10px;
-    padding: 15px 15px 0;
-    border: 1px solid var(--bo);
-    border-radius: var(--br);
-    box-shadow: 0 0 10px -7px black;
-    overflow: auto;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
+  background: #1e1e1e78;
+  display: flex;
+  max-width: 25%;
+  min-width: 250px;
+  max-height: 400px;
+  margin: 10px;
+  padding: 15px 15px 0;
+  border: 1px solid var(--bo);
+  border-radius: var(--br);
+  box-shadow: 0 0 10px -7px black;
+  overflow: auto;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 .sbox .stitle {
-    display: block;
-    margin: 0 0 20px;
-    font-size: 25px;
+  display: flex;
+  margin: 0 0 20px;
+  font-size: 20px;
+  align-items: center;
+}
+.sbox .stitle i {
+  margin-right: 15px;
+  font-size: 28px;
 }
 .sbox button {
     position: sticky;
@@ -350,8 +388,9 @@ main {
 }
 
 @media (max-width:768px) {
-    #service {
+    .servBox {
         flex-wrap: nowrap;
+        justify-content: flex-start;
         overflow: auto;
     }
 }
@@ -393,6 +432,9 @@ footer {
   .col-md-4 p {
     margin: 0 0 10px;
 }  
+.ft_logo {
+  margin: 10px 0 1rem;
+}
 @media (max-width: 768px) {
     .col-md-4 {
         min-width: 100%;
