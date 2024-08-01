@@ -9,20 +9,25 @@ app.set('view engine', 'ejs');
 
 app.use(cookieParser());
 
+// Middleware para definir cabeçalhos de cache para arquivos estáticos
+app.use((req, res, next) => {
+  res.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
+  res.set('Pragma', 'no-cache');
+  res.set('Expires', '0');
+  next();
+});
+
 // Configuração para servir arquivos estáticos
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
-  res.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
-  res.set('Pragma', 'no-cache');
-  res.set('Expires', '0');
-    res.render('index');
+  res.render('index');
 });
 
 app.get('/sobre', (req, res) => {
-    res.render('sobre', { title: 'Empresa' });
+  res.render('sobre', { title: 'Empresa' });
 });
 
 app.listen(PORT, () => {
-    console.log(`Servidor rodando na porta ${PORT}`);
+  console.log(`Servidor rodando na porta ${PORT}`);
 });
