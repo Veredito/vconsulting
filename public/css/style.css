@@ -277,6 +277,11 @@ main {
     width: 100%;
     height: 100%;
 }
+@media (max-width:768px) {
+.background {
+  top: 0;
+}
+}
 
 /* Apresentação */
 
