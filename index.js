@@ -12,14 +12,6 @@ app.use(cookieParser());
 // Configuração para servir arquivos estáticos
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Desativar cache para todas as rotas
-app.use((req, res, next) => {
-  res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
-  res.setHeader('Pragma', 'no-cache');
-  res.setHeader('Expires', '0');
-  next();
-});
-
 app.get('/', (req, res) => {
     res.render('index');
 });
