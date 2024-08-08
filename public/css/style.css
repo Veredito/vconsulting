@@ -433,6 +433,9 @@ main {
     .pr_text {
       text-align: center;
   }
+  .pr_text h1 {
+    margin: 0 0 3rem;
+}
     .pr_text h2 {
         margin: 1rem 0 0;
     }   
@@ -479,12 +482,16 @@ main {
 }
 
 @media (max-width: 768px) {
+  .personalized-advisory-section {
+    margin: 3rem 0;
+}
   .personalized-advisory-section .image img {
     max-width: 100%;
+    border-radius: var(--br) var(--br) var(--br) 100%;
   }
   .personalized-advisory-section .image {
     flex: 100%;
-    margin: 0 0 -12rem;
+    margin: 0 0 -20rem;
     padding: 0;
 }
 .personalized-advisory-section .content {
